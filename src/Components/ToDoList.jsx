@@ -1,21 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
+import ToDoCard from "./ToDoCard"
 
-class ToDoList extends Component {
-  state = {
-    toDoArray: ["Create React App", "Feel smug"]
-  };
-
-  render() {
+function ToDoList (props) {
     return (
       <div>
         <ul>
-          {this.state.toDoArray.map(toDoItem => (
-            <li key={toDoItem}>{toDoItem}</li>
+          {props.toDoArray.map(toDoItem => (
+            <ToDoCard key={toDoItem} item={toDoItem}></ToDoCard>
+            // <li key={toDoItem}>{toDoItem}</li>
           ))}
         </ul>
       </div>
     );
   }
-}
 
 export default ToDoList;
