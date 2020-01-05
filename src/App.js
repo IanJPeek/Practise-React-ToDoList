@@ -6,7 +6,7 @@ import ToDoPage from "./Components/ToDoPage";
 function App() {
   return (
     <div className="App">
-        <Header></Header>
+        <Header name="LoggedInUser"></Header>
         <ToDoPage></ToDoPage>
     </div>
   );
