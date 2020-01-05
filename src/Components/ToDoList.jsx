@@ -6,7 +6,7 @@ function ToDoList (props) {
       <div>
         <ul>
           {props.toDoArray.map(toDoItem => (
-            <ToDoCard key={toDoItem} item={toDoItem}></ToDoCard>
+            <ToDoCard key={toDoItem} item={toDoItem} deleteItem={props.deleteItem}></ToDoCard>
             // <li key={toDoItem}>{toDoItem}</li>
           ))}
         </ul>

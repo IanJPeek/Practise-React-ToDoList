@@ -11,7 +11,9 @@ class ToDoPage extends Component {
     return (
       <div>
         <ToDoItemAdder addNewItemToDo={this.addNewItemToDo}></ToDoItemAdder>
-        <ToDoList toDoArray={this.state.toDoArray}></ToDoList>
+        <ToDoList toDoArray={this.state.toDoArray}
+        deleteItem={this.deleteItem}
+        ></ToDoList>
       </div>
     );
   }
@@ -21,6 +23,15 @@ addNewItemToDo = (newToDoItem) => {
   return {toDoArray: [newToDoItem, ...currentState.toDoArray]};
   });
 }
+
+deleteItem = (itemToDelete) => {
+  this.setState((currentState) =>{
+    const deletedArray = [...currentState.toDoArray.filter(item => item!==itemToDelete )]
+    console.log(deletedArray)
+    return{toDoArray: [deletedArray]}
+  })
+}
+
 
 }
 
