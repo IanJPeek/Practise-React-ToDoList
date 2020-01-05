@@ -10,7 +10,7 @@ class ToDoList extends Component {
       <div>
         <ul>
           {this.state.toDoArray.map(toDoItem => (
-            <li>{toDoItem}</li>
+            <li key={toDoItem}>{toDoItem}</li>
           ))}
         </ul>
       </div>
