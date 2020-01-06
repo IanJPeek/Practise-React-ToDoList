@@ -26,12 +26,18 @@ addNewItemToDo = (newToDoItem) => {
 
 deleteItem = (itemToDelete) => {
 
-
   console.log("delete done on: ", itemToDelete)
 
-const arrayPostDelete = this.state.toDoArray.filter (item => item!==itemToDelete);
-this.setState({arrayPostDelete});
+  this.setState(currentState => {
+    const deletedToDo = currentState.toDoArray.filter( item => item !==itemToDelete);
+    return ({toDoArray: deletedToDo})
+  })
 
+//v2 - working, but not displaying?
+// const arrayPostDelete = this.state.toDoArray.filter (item => item!==itemToDelete);
+// this.setState({arrayPostDelete});
+
+  // v1
   // this.setState((currentState) =>{
   //   const deletedArray = [...currentState.toDoArray.filter(item => item!==itemToDelete )]
   //   console.log(deletedArray)
