@@ -25,11 +25,19 @@ addNewItemToDo = (newToDoItem) => {
 }
 
 deleteItem = (itemToDelete) => {
-  this.setState((currentState) =>{
-    const deletedArray = [...currentState.toDoArray.filter(item => item!==itemToDelete )]
-    console.log(deletedArray)
-    return{toDoArray: [deletedArray]}
-  })
+
+
+  console.log("delete done on: ", itemToDelete)
+
+const arrayPostDelete = this.state.toDoArray.filter (item => item!==itemToDelete);
+this.setState({arrayPostDelete});
+
+  // this.setState((currentState) =>{
+  //   const deletedArray = [...currentState.toDoArray.filter(item => item!==itemToDelete )]
+  //   console.log(deletedArray)
+  //   return{toDoArray: [deletedArray]}
+  // })
+
 }
 
 
